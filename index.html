@@ -97,8 +97,15 @@ function calculateCompatibility () {
 	let Q4Compatibility = 5 - Math.abs(Q4 - DESIRED_RESPONSE[3]);
 	let Q5Compatibility = 5 - Math.abs(Q5 - DESIRED_RESPONSE[4]);
 
-	Let Total = Q1Compatibility + Q2Compatibility + Q3Compatibility + Q4Compatibility + Q5Compatibility
+	let Total = Q1Compatibility + Q2Compatibility + Q3Compatibility + Q4Compatibility + Q5Compatibility
+
+	Total *= 100 / MaxScore;
+	Total = Math.round(total);
+	console.log ("final Compatibility" + Total);
+
+	document.getElementById("compatibility").innerHTML = "You are"  + Total;
 }
+
 
 </body>
 </script>
