@@ -4,11 +4,9 @@
     <title>Match maker</title>
 </head>
 <body>
-
 	<h1>Finding Love on the Internet (2003 edition)</h1>
-
-<body style="background-image: url(classy.png);background-size: cover;" </body> </body>
-
+</body>
+<body style="background-image: url(classy.png);background-size: cover;"
 
   <p>Instructions:</p>
   <p>Answer the given questions and hit button to check your compatibility</p>
@@ -73,11 +71,35 @@
 
 <script> 
 
+console.log("Starting System");
+
 function calculateCompatibility () {
 	console.log("Compatibility Calculations")
 
-</script>
+	const DESIRED_RESPONSE = [
+		5, /* Greatly Agree */
+		4, /* Agree   */
+		3, /* Neutral */
+		2, /* Disagree*/
+		1, /* Greatly Disagree*/
 
+	]
 
+	let Q1 = document.Id("q1").selectedOption[0].value;
+	let Q2 = document.Id("q2").selectedOption[0].value;
+	let Q3 = document.Id("q3").selectedOption[0].value;
+	let Q4 = document.Id("q4").selectedOption[0].value;
+	let Q5 = document.Id("q5").selectedOption[0].value;
 
+	let Q1Compatibility = 5 - Math.abs(Q1 - DESIRED_RESPONSE[1]);
+	let Q2Compatibility = 5 - Math.abs(Q2 - DESIRED_RESPONSE[4]);
+	let Q3Compatibility = 5 - Math.abs(Q3 - DESIRED_RESPONSE[3]);
+	let Q4Compatibility = 5 - Math.abs(Q4 - DESIRED_RESPONSE[3]);
+	let Q5Compatibility = 5 - Math.abs(Q5 - DESIRED_RESPONSE[4]);
+
+	Let Total = Q1Compatibility + Q2Compatibility + Q3Compatibility + Q4Compatibility + Q5Compatibility
 }
+
+</body>
+</script>
+</html>

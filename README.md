@@ -1,3 +1,3 @@
 # matchmak3r
 ## credits
-Eric Porgue Matchmaker-Lite, used assistance for the calculations step as well
+Eric Porgue Matchmaker-Lite, needed a lot of help for the calculations step as well, had a very hard time finding solutions.
