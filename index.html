@@ -100,15 +100,31 @@
             let Q4Compatibility = 5 - Math.abs(Q4 - DESIRED_RESPONSE[3]);
             let Q5Compatibility = 5 - Math.abs(Q5 - DESIRED_RESPONSE[4]);
 
-            // Calculate total compatibility
             let Total = Q1Compatibility + Q2Compatibility + Q3Compatibility + Q4Compatibility + Q5Compatibility;
-            let MaxScore = 25; // Maximum possible score (5 questions * 5 points each)
+            let MaxScore = 25;
             let Percentage = Math.round((Total / MaxScore) * 100);
 
             console.log("Final Compatibility:", Percentage);
+			
+			// Determine the message based on the compatibility score
+			let message = getCompatibilityMessage(Percentage);
 
-            // Display the result
-            document.getElementById("compatibility").innerHTML = "You are " + Percentage + "% compatible!";
+// Display the result and message
+document.getElementById("compatibility").innerHTML = `You are ${Percentage}% compatible! <br> ${message}`;
+}
+
+function getCompatibilityMessage(percentage) {
+if (percentage >= 90) {
+	return "Great Match, you agree with Smithers O Neil";
+} else if (percentage >= 70) {
+	return "Very good match, you and Smithers should be in Touch";
+} else if (percentage >= 50) {
+	return "Good match! Smithers is interested";
+} else if (percentage >= 30) {
+	return "Smithers disagrees, it wouldn't work out";
+} else {
+	return "It aint gonna work";
+}	
         }
     </script>
 </body>
